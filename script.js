@@ -83,3 +83,22 @@ document.querySelectorAll('.faq-icon').forEach(i=>i.textContent = '+');
 
 
 
+  document.querySelectorAll('.accordion-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const content = btn.nextElementSibling;
+      const icon = btn.querySelector('.icon');
+      const isOpen = content.style.maxHeight;
+
+      // close all
+      document.querySelectorAll('.accordion-content').forEach(c => {
+        c.style.maxHeight = null;
+      });
+      document.querySelectorAll('.icon').forEach(i => i.textContent = '+');
+
+      // toggle current
+      if (!isOpen) {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        icon.textContent = '−';
+      }
+    });
+  });

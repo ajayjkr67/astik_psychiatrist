@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+<section id="services" class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- SECTION TITLE -->
+    <h2 class="text-3xl font-bold text-center mb-14">Services Offered</h2>
+
+    <!-- TOP 3 CATEGORY CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+
+      <!-- Child -->
+      <div class="bg-white rounded-xl shadow p-8 text-center hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/120" alt="child" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+        <h3 class="text-xl font-semibold mb-1">Child Psychiatry</h3>
+        <p class="text-gray-600 text-sm">Developmental, behavior & learning support.</p>
+      </div>
+
+      <!-- Adult -->
+      <div class="bg-white rounded-xl shadow p-8 text-center hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/120" alt="adult" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+        <h3 class="text-xl font-semibold mb-1">Adult Psychiatry</h3>
+        <p class="text-gray-600 text-sm">Mood, anxiety, psychosis treatment.</p>
+      </div>
+
+      <!-- Senior -->
+      <div class="bg-white rounded-xl shadow p-8 text-center hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/120" alt="senior" class="w-20 h-20 mx-auto mb-4 rounded-full object-cover">
+        <h3 class="text-xl font-semibold mb-1">Geriatric Psychiatry</h3>
+        <p class="text-gray-600 text-sm">Age-related mental health & review.</p>
+      </div>
+
+    </div>
+
+    <!-- SERVICES GRID -->
+    <h3 class="text-2xl font-semibold text-center mb-10">Individual Services</h3>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+
+      <!-- Card -->
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="Depression">
+        <h4 class="font-semibold text-lg mb-1">Depression</h4>
+        <p class="text-gray-600 text-sm">Talk therapy + medication to lift mood.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="OCD">
+        <h4 class="font-semibold text-lg mb-1">OCD</h4>
+        <p class="text-gray-600 text-sm">Structured therapy + meds for compulsions.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="Bipolar">
+        <h4 class="font-semibold text-lg mb-1">Bipolar Disorder</h4>
+        <p class="text-gray-600 text-sm">Mood stabilizers + psychotherapy.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="Schizo">
+        <h4 class="font-semibold text-lg mb-1">Schizophrenia</h4>
+        <p class="text-gray-600 text-sm">Medication-led care + psychosocial support.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="CBT">
+        <h4 class="font-semibold text-lg mb-1">CBT</h4>
+        <p class="text-gray-600 text-sm">Short-term, structured, skill-based therapy.</p>
+      </div>
+
+      <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
+        <img src="https://via.placeholder.com/300x180" class="w-full h-40 object-cover rounded-md mb-4" alt="Crisis">
+        <h4 class="font-semibold text-lg mb-1">Crisis Intervention</h4>
+        <p class="text-gray-600 text-sm">Immediate support for urgent needs.</p>
+      </div>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-14">
+      <a href="#contact" class="px-8 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">
+        Book Consultation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<script>
+// optional hover effect enhancements
+document.querySelectorAll('#services .shadow').forEach(card => {
+  card.addEventListener('mouseenter', () => card.classList.add('scale-[1.01]'));
+  card.addEventListener('mouseleave', () => card.classList.remove('scale-[1.01]'));
+});
+</script>
+
+
+
+
+</body>
+</html>
