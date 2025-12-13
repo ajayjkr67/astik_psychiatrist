@@ -5,7 +5,7 @@ export default async function handler(req, res) {
     return res.status(405).end();
   }
 
-const { first_name, last_name, email, message } = req.body;
+const { first_name, last_name, email, user_phone, message } = req.body;
 const name = `${first_name} ${last_name || ""}`.trim();
 
 
@@ -25,6 +25,7 @@ const name = `${first_name} ${last_name || ""}`.trim();
         htmlContent: `
           <p>Name: ${name}</p>
           <p>Email: ${email}</p>
+          <p>Phone: ${user_phone}</p>
           <p>Message: ${message}</p>
         `,
       }),

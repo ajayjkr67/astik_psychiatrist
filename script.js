@@ -132,10 +132,6 @@ document.getElementById('year').textContent = new Date().getFullYear();
   });
 
 
-
-
-
-
 // SERVICES SECTION OPTIMIZATION
 
 const servicesData = {
