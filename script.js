@@ -59,52 +59,78 @@ icon.textContent = '+';
 const form = document.getElementById('contactForm');
 const alertBox = document.getElementById('formAlert');
 
-form.addEventListener('submit', async (e) => {
+// form.addEventListener('submit', async (e) => {
+//   e.preventDefault();
+
+//   // UI: show sending
+//   alertBox.textContent = 'Sending...';
+//   alertBox.classList.remove('hidden', '-translate-y-3');
+//   alertBox.classList.add('translate-y-0');
+
+//   const data = ['first_name','last_name','email','user_phone','message']
+//     .reduce((acc, id) => {
+//       acc[id] = document.getElementById(id).value.trim();
+//       return acc;
+//     }, {});
+
+//   if (!data.first_name || !data.email || !data.message) {
+//     alertBox.textContent = 'Please fill all required fields.';
+//     return;
+//   }
+
+//   try {
+//     const res = await fetch('http://localhost:3000/send-email', {
+//       method: 'POST',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify(data)
+//     });
+
+//     if (!res.ok) throw new Error('Send failed');
+
+//     // UI: success
+//     alertBox.textContent = 'Request sent. Clinic will contact you.';
+//     form.reset();
+
+//     setTimeout(() => {
+//       alertBox.classList.add('-translate-y-3');
+//       setTimeout(() => alertBox.classList.add('hidden'), 300);
+//     }, 3000);
+
+//   } catch (err) {
+//     console.error(err);
+//     alertBox.textContent = 'Failed to send. Try again.';
+//   }
+// });
+
+
+
+// Fill copyright year
+
+form.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // UI: show sending
-  alertBox.textContent = 'Sending...';
-  alertBox.classList.remove('hidden', '-translate-y-3');
-  alertBox.classList.add('translate-y-0');
+  const data = {
+    name: document.getElementById("name").value,
+    email: document.getElementById("email").value,
+    message: document.getElementById("message").value,
+  };
 
-  const data = ['first_name','last_name','email','user_phone','message']
-    .reduce((acc, id) => {
-      acc[id] = document.getElementById(id).value.trim();
-      return acc;
-    }, {});
+  const res = await fetch("/api/send-email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
 
-  if (!data.first_name || !data.email || !data.message) {
-    alertBox.textContent = 'Please fill all required fields.';
-    return;
-  }
-
-  try {
-    const res = await fetch('http://localhost:3000/send-email', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
-
-    if (!res.ok) throw new Error('Send failed');
-
-    // UI: success
-    alertBox.textContent = 'Request sent. Clinic will contact you.';
+  if (res.ok) {
+    alert("Sent");
     form.reset();
-
-    setTimeout(() => {
-      alertBox.classList.add('-translate-y-3');
-      setTimeout(() => alertBox.classList.add('hidden'), 300);
-    }, 3000);
-
-  } catch (err) {
-    console.error(err);
-    alertBox.textContent = 'Failed to send. Try again.';
+  } else {
+    alert("Failed");
   }
 });
 
 
 
-// Fill copyright year
 document.getElementById('year').textContent = new Date().getFullYear();
 
 

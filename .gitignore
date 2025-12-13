@@ -1,2 +1,5 @@
 node_modules/
 .env
+
+# Testing- server.js s good for local testing
+server.js
