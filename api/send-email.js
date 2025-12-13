@@ -5,7 +5,9 @@ export default async function handler(req, res) {
     return res.status(405).end();
   }
 
-  const { name, email, message } = req.body;
+const { first_name, last_name, email, message } = req.body;
+const name = `${first_name} ${last_name || ""}`.trim();
+
 
   try {
     const response = await fetch("https://api.brevo.com/v3/smtp/email", {
