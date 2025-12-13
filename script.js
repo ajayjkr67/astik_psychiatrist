@@ -155,20 +155,22 @@ const servicesData = {
 
   adult: [
     {
-      title: "Depression / Anxiety",
+      title: "Anxiety",
       img: "./images/depression2.jpg",
-      desc: "Anxiety and depression involve excessive worry, fear, or nervousness and persistent low mood, loss of interest, and reduced energy that interfere with daily functioning. Both are medical conditions and respond well to appropriate treatment."
+      // desc: "Anxiety and depression involve excessive worry, fear, or nervousness and persistent low mood, loss of interest, and reduced energy that interfere with daily functioning. Both are medical conditions and respond well to appropriate treatment."
+      desc: "Anxiety involves excessive worry, fear, or nervousness that interferes with daily life. It is common and highly treatable with therapy, medication, and coping strategies."
+    },
+    {
+      title: "Depression",
+      img: "./images/depression.jpg",
+      desc: "Depression causes persistent low mood, loss of interest, and reduced energy affecting daily functioning. It is a medical condition, not a weakness, and responds well to treatment."
     },
     {
       title: "Obsessive Compulsive Disorder (OCD)",
       img: "./images/ocd.jpg",
       desc: "OCD involves unwanted repetitive thoughts and compulsive behaviours performed to reduce anxiety. With appropriate treatment, people can gain good control over symptoms."
     },
-    {
-      title: "Schizophrenia",
-      img: "./images/schiz.jpg",
-      desc: "Schizophrenia affects thinking, perception, and behaviour, causing symptoms like hallucinations and delusions. Early diagnosis and sustained treatment significantly improve long-term outcomes."
-    }
+    
   ],
 
   geriatric: [
