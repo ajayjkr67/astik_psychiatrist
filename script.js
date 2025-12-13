@@ -1,5 +1,3 @@
-// script.js - lightweight interactivity
-
 
 // Mobile menu toggle
 const mobileBtn = document.getElementById('mobileBtn');
@@ -33,28 +31,32 @@ menuClose.classList.add('hidden');
 
 
 // FAQ accordion
-document.querySelectorAll('.faq-item').forEach(item=>{
-const btn = item.querySelector('.faq-q');
-const ans = item.querySelector('.faq-a');
-const icon = item.querySelector('.faq-icon');
-btn.addEventListener('click', ()=>{
-const isHidden = ans.classList.contains('hidden');
-document.querySelectorAll('.faq-a').forEach(a=>a.classList.add('hidden'));
-document.querySelectorAll('.faq-icon').forEach(i=>i.textContent = '+');
-if(isHidden){
-ans.classList.remove('hidden');
-icon.textContent = '-';
-} else {
-ans.classList.add('hidden');
-icon.textContent = '+';
-}
-})
-})
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const ans = item.querySelector('.faq-a');
+  const icon = item.querySelector('.faq-icon');
+
+  btn.addEventListener('click', () => {
+    const open = ans.style.maxHeight;
+
+    // close all
+    document.querySelectorAll('.faq-a').forEach(a => {
+      a.style.maxHeight = null;
+      a.classList.add('opacity-0');
+    });
+    document.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+
+    // open current
+    if (!open) {
+      ans.style.maxHeight = ans.scrollHeight + 'px';
+      ans.classList.remove('opacity-0');
+      icon.textContent = '−';
+    }
+  });
+});
 
 
-
-
-// Contact form (client-side only)
+// Contact form
 
 const form = document.getElementById('contactForm');
 const alertBox = document.getElementById('formAlert');
@@ -103,17 +105,11 @@ form.addEventListener('submit', async (e) => {
   }
 });
 
-
+// FOOTER YEAR
 document.getElementById('year').textContent = new Date().getFullYear();
 
 
-// Small accessibility: collapse all FAQ answers on load
-window.addEventListener('load', ()=>{
-document.querySelectorAll('.faq-a').forEach(a=>a.classList.add('hidden'));
-document.querySelectorAll('.faq-icon').forEach(i=>i.textContent = '+');
-});
-
-
+// TREATMENTS
 
   document.querySelectorAll('.accordion-btn').forEach(btn => {
     btn.addEventListener('click', () => {
