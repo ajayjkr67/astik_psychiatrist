@@ -18,8 +18,8 @@ const name = `${first_name} ${last_name || ""}`.trim();
         "content-type": "application/json",
       },
       body: JSON.stringify({
-        sender: { email: "ajayjkr66@gmail.com" },
-        to: [{ email: "ajayjkr66@gmail.com" }],
+        sender: { email: "kitsaenam@gmail.com" },
+        to: [{ email: "kitsaenam@gmail.com" }],
         replyTo: { email },
         subject: "New Website Enquiry",
         htmlContent: `
